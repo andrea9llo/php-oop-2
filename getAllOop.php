@@ -11,12 +11,12 @@
     }
 
     public function __toString(){
-      return  $this-> name ." ".
-              $this-> lastname;
+      return "Name: ". $this-> name ."; Lastname: ".
+             $this-> lastname;
     }
 
   }
-  $person = new Person(Andrea, Novello);
+  $person = new Person("Andrea", "Novello");
 
   class Guest extends Person{
 
@@ -28,10 +28,10 @@
     }
 
     public function __toString(){
-      return parent::__toString() . " " . $this-> year_birth;
+      return parent::__toString() . ", year of birth: " . $this-> year_birth;
     }
   }
-  $guest = new Guest(Andrea, Novello, 1993);
+  $guest = new Guest("Andrea", "Novello", 1993);
   class Payng extends Person{
 
     public $address;
@@ -42,10 +42,16 @@
     }
 
     public function __toString(){
-      return parent::__toString() . " " . $this-> address;
+      return parent::__toString() . "; Address: " . $this-> address;
     }
 
   }
 
-  $payng = new Payng(andrea, novello, viale aldo moro);
-  echo $payng;
+  $payng = new Payng("Andrea", "Novello", "viale aldo moro 64");
+
+
+  echo "Person <br>".$person."<br>";
+  echo "---------<br>";
+  echo "Guest <br>".$guest ."<br>";
+  echo "---------<br>";
+  echo "Payng <br>".$payng;
